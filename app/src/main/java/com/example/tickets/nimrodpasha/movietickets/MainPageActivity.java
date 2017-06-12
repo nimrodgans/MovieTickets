@@ -8,7 +8,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 public class MainPageActivity extends AppCompatActivity {
 
-    AsyncHttpResponseHandler m_httpReponseHandler;
+    AsyncHttpResponseHandler m_httpResponseHandler;
     AsyncHttpClient m_httpClient;
 
     @Override
@@ -16,10 +16,10 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-        m_httpReponseHandler = new MyAsyncHttpResponseHandler();
+        m_httpResponseHandler = new MyAsyncHttpResponseHandler();
         m_httpClient = new AsyncHttpClient(21147/*Set real port from definitions*/);
 
-        m_httpClient.get("ip:port/movies", m_httpReponseHandler);
+        m_httpClient.get("ip:port/movies", m_httpResponseHandler);
     }
 
     private class MyAsyncHttpResponseHandler extends AsyncHttpResponseHandler
